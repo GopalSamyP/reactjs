@@ -13,7 +13,7 @@
     <script src="https://unpkg.com/supersimpledev/babel.js"></script>
     <script type="text/babel">
       
-      function InsertCart({itemName, price}){
+      function ProductDetails({itemName, price}){
         return (
           <>
             <div style={{border: '2px solid black', padding: '8px 16px', margin: '16px', width:'20%'}}>
@@ -28,9 +28,9 @@
       function App(){
         return (
           <>
-            <InsertCart itemName="Cotton Sock" price="100.00" />
-            <InsertCart itemName="Tennis Balls" price="6.00" />
-            <InsertCart itemName="Plain T-Shirt" price="7.99" />
+            <ProductDetails itemName="Cotton Sock" price="100.00" />
+            <ProductDetails itemName="Tennis Balls" price="6.00" />
+            <ProductDetails itemName="Plain T-Shirt" price="7.99" />
           </>
         );
       }
