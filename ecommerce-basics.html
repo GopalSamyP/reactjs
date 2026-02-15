@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>E-Commerce Basics</title>
+  </head>
+  <body>
+    <div class="js-container"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1.11.19/dayjs.min.js"></script>
+    <script src="https://unpkg.com/supersimpledev/react.js"></script>
+    <script src="https://unpkg.com/supersimpledev/react-dom.js"></script>
+
+    <script src="https://unpkg.com/supersimpledev/babel.js"></script>
+    <script type="text/babel">
+      
+      function InsertCart({itemName, price}){
+        return (
+          <>
+            <div style={{border: '2px solid black', padding: '8px 16px', margin: '16px', width:'20%'}}>
+              <p>{itemName}</p>
+              <p>Price: ${price}</p>
+              <button>Add To Cart</button>
+            </div>
+          </>
+      );
+      }
+
+      function App(){
+        return (
+          <>
+            <InsertCart itemName="Cotton Sock" price="100.00" />
+            <InsertCart itemName="Tennis Balls" price="6.00" />
+            <InsertCart itemName="Plain T-Shirt" price="7.99" />
+          </>
+        );
+      }
+      const container = document.querySelector('.js-container');
+      ReactDOM.createRoot(container).render(<App />);
+    </script>
+  </body>
+</html>
