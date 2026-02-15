@@ -13,10 +13,11 @@
     <script src="https://unpkg.com/supersimpledev/babel.js"></script>
     <script type="text/babel">
       
-      function ProductDetails({itemName, price, discountedPrice}){
+      function ProductDetails({itemName, price, discountedPrice, imageSrc}){
         return (
           <>
             <div style={{border: '2px solid black', padding: '8px 16px', margin: '16px', width:'20%'}}>
+              <img src={imageSrc} width="100" ></img>
               <p>{itemName}</p>
                 {discountedPrice ? <div><del>Price: {price}</del> <p>Discounted Price: {discountedPrice}</p></div> : <div><p>Price: {price}</p></div>}
               <button>Add To Cart</button>
@@ -28,9 +29,9 @@
       function App(){
         return (
           <>
-            <ProductDetails itemName="Cotton Sock" price="10.60" discountedPrice="5.45" />
-            <ProductDetails itemName="Tennis Balls" price="6.00" />
-            <ProductDetails itemName="Plain T-Shirt" price="7.99" />
+            <ProductDetails itemName="Cotton Sock" price="10.60" discountedPrice="5.45" imageSrc="cotton-socks.png" />
+            <ProductDetails itemName="Tennis Balls" price="6.00" imageSrc="tennis-balls.png" />
+            <ProductDetails itemName="Plain T-Shirt" price="7.99" imageSrc="plain-t-shirt.png" />
           </>
         );
       }
