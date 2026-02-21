@@ -49,33 +49,46 @@
       }
 
       function App(){
+
+        var chatMessages = [
+          {
+            message: 'Hello chatbot',
+            sender: 'user',
+            id: 'id1'
+          },{
+            message: 'Hello! how can I help you?',
+            sender: 'robot',
+            id: 'id2'
+          },{
+            message: 'Can you get me todays date?',
+            sender: 'user',
+            id: 'id3'
+          },{
+            message: 'Today is Feburary 08',
+            sender: 'robot',
+            id: 'id4'
+          },{
+            message: 'How about flip a coin',
+            sender: 'user',
+            id: 'id3'
+          },{
+            message: 'You got heads!',
+            sender: 'robot',
+            id: 'id4'
+          }
+        ]
+
+        const chatMessageComponents = chatMessages.map((chatMessage) =>{
+            return (<ChatMessage
+              message={chatMessage.message}
+              sender={chatMessage.sender}
+              key={chatMessage.id}
+            />)
+        });
         return (
           <div>
             <ChatInput />
-            <ChatMessage 
-              message="Hello chatbot" 
-              sender="user"
-            />
-            <ChatMessage 
-              message="Hello! how can I help you?" 
-              sender="robot" 
-            />
-            <ChatMessage 
-              message="Can you get me todays date?" 
-              sender="user" 
-            />
-            <ChatMessage 
-              message="Today is Feburary 08" 
-              sender="robot" 
-            />
-            <ChatMessage 
-              message="How about flip a coin" 
-              sender="user" 
-            />
-            <ChatMessage 
-              message="You got heads!" 
-              sender="robot" 
-            />
+            {chatMessageComponents}
           </div>
         );
       }
