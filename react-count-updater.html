@@ -12,21 +12,62 @@
 
     <script src="https://unpkg.com/supersimpledev/babel.js"></script>
     <script type="text/babel">
+
+
+    //  function CounterButton({count, setCount}){
+
+    //     function handleClick(event){
+    //       var countValue = count.replace('Clicked ', '').replace(' times', '');
+    //       countValue = parseInt(countValue)
+    //       if(countValue < 1){
+    //         setCount('Clicked ' + (parseInt(countValue) + 1) + ' time');
+    //       }else{
+    //         setCount('Clicked ' + (parseInt(countValue) + 1) + ' times');
+    //       }
+    //     }
+
+    //     return (
+    //       <div>
+    //           <button onClick={handleClick}>{count}</button>
+    //       </div>
+    //     )
+    //  }
      
 
-      function App(){
+    //   function App(){
+    //     const [count, setCount] = React.useState('Clicked 0 times');
+    //     function handleResetClick(){
+    //       setCount('Clicked 0 time');
+    //     }
+    //     return (
+    //       <>
+    //         <CounterButton count={count} setCount={setCount} />
+    //         <CounterButton  count={count} setCount={setCount} />
+    //         <button onClick={handleResetClick}>Reset Count</button>
+    //       </>
+    //     );
+    //   }
 
-        const [count, setCount] = React.useState(0);
-        
-        function handleClick(event){
-          console.log('Button clicked');
-          setCount(count + 1);
+      function App(){
+        const [inputText, setInputText] = React.useState('');
+
+        function updateText(event){
+          setInputText(event.target.value);
         }
-        return (
-          <div>
-              <button onClick={handleClick}>Clicked {count} times</button>
-          </div>
-        )
+        function resetInputText(){
+          setInputText('');
+        }
+        function setExample(){
+          setInputText('Bava Aadhi Sarva...');
+        }
+        return(
+          <>
+            <input placeholder="typein" value={inputText} onChange={updateText} />
+            <p>{inputText}</p>
+            <button onClick={resetInputText}>Reset</button>
+            <button onClick={setExample}>Example</button>
+          </>
+        );
       }
       const container = document.querySelector('.js-container');
       ReactDOM.createRoot(container).render(<App />);
